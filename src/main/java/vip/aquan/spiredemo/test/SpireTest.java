@@ -12,7 +12,7 @@ import java.util.concurrent.*;
  * 教程链接：https://www.e-iceblue.cn/spirebarcodejava/scan-barcode-for-java-2.html
  *
  * 产品特点：
- * 1.免费版本有些条形码不支持  2.可以免费试用期一个月
+ * 1.免费版本有些条形码不支持  2.可以申请正式版试用期一个月
  * 3.付费版本如果需要发布云服务，在购买第二款授权产品，5w永久使用，一年内的版本订阅，链接：http://www.e-iceblue.cn/Buy/Spire-Office-JAVA.html
  * 4.性能：自测平均时间2s左右
  * 5.付款要先拟定合同，然后走付款流程，公对公银行转账的方式付款
@@ -94,11 +94,7 @@ public class SpireTest {
         try{
             // 获取结果，并且设置超时时间10s
             result = future.get(10, TimeUnit.SECONDS);
-        }catch(InterruptedException e){
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (TimeoutException e) {
+        } catch(Exception e){
             e.printStackTrace();
         }
         //执行结束后，手动关闭线程池
