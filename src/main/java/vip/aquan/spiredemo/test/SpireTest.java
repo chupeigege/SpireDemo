@@ -39,12 +39,14 @@ public class SpireTest {
 
         //若找不到文件，报空指针，maven install即可
         InputStream inputStream = this.getClass().getResourceAsStream("/barcode.png");
+//        String fileName = "C:\\barcode.png";
 
         String[] data = null;
         try {
 
-//            data = BarcodeScanner.scan(fileName , BarCodeType.Code_128);  //从图片中识别Code_128类型条形码
             data = BarcodeScanner.scan(inputStream);
+//            data = BarcodeScanner.scan(fileName);
+//            data = BarcodeScanner.scan(fileName , BarCodeType.Code_128);  //从图片中识别Code_128类型条形码
         } catch (Exception e){
             e.printStackTrace();
         }
